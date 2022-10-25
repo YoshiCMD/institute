@@ -64,8 +64,6 @@ public class AsyncSpringLiquibase extends DataSourceClosingSpringLiquibase {
     public void afterPropertiesSet() throws LiquibaseException {
         if (!env.acceptsProfiles(Profiles.of("no-liquibase"))) {
             if (env.acceptsProfiles(Profiles.of("dev|heroku"))) {
-                // Prevent Thread Lock with spring-cloud-context GenericScope
-                // https://github.com/spring-cloud/spring-cloud-commons/commit/aaa7288bae3bb4d6fdbef1041691223238d77b7b#diff-afa0715eafc2b0154475fe672dab70e4R328
                 try (Connection connection = getDataSource().getConnection()) {
                     executor.execute(() -> {
                         try {

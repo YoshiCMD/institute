@@ -1,0 +1,50 @@
+dependencies {
+    developmentOnly "org.springframework.boot:spring-boot-devtools:2.7.2"
+}
+
+def profiles = "dev"
+if (project.hasProperty("no-liquibase")) {
+    profiles += ",no-liquibase"
+}
+if (project.hasProperty("tls")) {
+    profiles += ",tls"
+}
+
+springBoot {
+    buildInfo {
+        properties {
+            time = null
+        }
+    }
+}
+
+bootRun {
+    args = ["--spring.profiles.active=${profiles}"]
+}
+
+
+processResources {
+    inputs.property('version', version)
+    inputs.property('springProfiles', profiles)
+    filesMatching("**/application.yml") {
+        filter {
+            it.replace("#project.version#", version)
+        }
+    }
+}
+
+task integrationTest(type: Test) {
+    maxHeapSize = "1G"
+    useJUnitPlatform()
+    description = "Execute integration tests."
+    group = "verification"
+    include "**/*IT*", "**/*IntTest*"
+    testLogging {
+        events 'FAILED', 'SKIPPED'
+    }
+    systemProperty('spring.profiles.active', 'testdev')
+    systemProperty('java.security.egd', 'file:/dev/./urandom')
+    reports.html.enabled = false
+}
+integrationTest.dependsOn test
+
