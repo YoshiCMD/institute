@@ -12,8 +12,6 @@ import java.io.Serializable;
 @Setter
 public class StudentRequest implements Serializable {
 
-    private String id;
-
     @NotNull
     @Size(min = 1, max = 50)
     private String login;
@@ -38,8 +36,7 @@ public class StudentRequest implements Serializable {
     @Override
     public String toString() {
         return "{"
-                + "\"id\":\"" + id + "\""
-                + ", \"login\":\"" + login + "\""
+                + "\"login\":\"" + login + "\""
                 + ", \"password\":\"" + password + "\""
                 + ", \"firstName\":\"" + firstName + "\""
                 + ", \"lastName\":\"" + lastName + "\""

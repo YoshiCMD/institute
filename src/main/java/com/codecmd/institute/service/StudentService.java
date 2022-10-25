@@ -1,20 +1,24 @@
 package com.codecmd.institute.service;
 
 import com.codecmd.institute.domain.Student;
+import com.codecmd.institute.repository.CourseRepository;
 import com.codecmd.institute.repository.StudentRepository;
+import com.codecmd.institute.security.SecurityUtils;
+import com.codecmd.institute.service.dto.CourseDTO;
 import com.codecmd.institute.service.dto.StudentDTO;
+import com.codecmd.institute.service.mapper.CourseMapper;
 import com.codecmd.institute.service.mapper.StudentMapper;
+import com.codecmd.institute.web.rest.error.StudentNotFoundException;
 import com.codecmd.institute.web.rest.request.StudentRequest;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -29,8 +33,10 @@ public class StudentService {
     private final Logger log = LoggerFactory.getLogger(StudentService.class);
 
     private final StudentRepository studentRepository;
+    private final CourseRepository courseRepository;
 
     private final StudentMapper studentMapper;
+    private final CourseMapper courseMapper;
 
     private final PasswordEncoder passwordEncoder;
 
@@ -63,8 +69,9 @@ public class StudentService {
      * @return the persisted entity.
      */
     public Optional<StudentDTO> update(StudentRequest request) {
-        return Optional
-                .of(studentRepository.findById(request.getId()))
+        return SecurityUtils
+                .getCurrentUserLogin()
+                .map(studentRepository::findOneByLoginIgnoreCase)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .map(student -> {
@@ -82,14 +89,51 @@ public class StudentService {
     }
 
     /**
-     * Get one student by id.
+     * register.
      *
-     * @param id the id of the entity.
-     * @return the entity.
+     * @param courses list courses.
+     * @return the persisted entity.
+     */
+    public Set<CourseDTO> enrollCourses(List<String> courses) {
+        return SecurityUtils
+                .getCurrentUserLogin()
+                .map(studentRepository::findOneByLoginIgnoreCase)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .map(student -> {
+                    student.setCourses(new HashSet<>(courseRepository.findAllById(courses)));
+                    return studentRepository.save(student);
+                })
+                .map(Student::getCourses)
+                .map(courseMapper::toDto)
+                .orElseThrow(StudentNotFoundException::new);
+    }
+
+    /**
+     * Get current student.
+     *
+     * @return the StudentDTO entity.
      */
     @Transactional(readOnly = true)
-    public Optional<StudentDTO> findOne(String id) {
-        log.debug("Request to get Student : {}", id);
-        return studentRepository.findById(id).map(studentMapper::toDto);
+    public Optional<StudentDTO> findOne() {
+        return SecurityUtils
+                .getCurrentUserLogin()
+                .flatMap(studentRepository::findOneByLoginIgnoreCase)
+                .map(studentMapper::toDto);
+    }
+
+    /**
+     * Get my courses current student.
+     *
+     * @return the CourseDTO entity.
+     */
+    @Transactional(readOnly = true)
+    public Set<CourseDTO> myCourses() {
+        return SecurityUtils
+                .getCurrentUserLogin()
+                .flatMap(studentRepository::findOneByLoginIgnoreCase)
+                .map(Student::getCourses)
+                .map(courseMapper::toDto)
+                .orElseThrow(StudentNotFoundException::new);
     }
 }

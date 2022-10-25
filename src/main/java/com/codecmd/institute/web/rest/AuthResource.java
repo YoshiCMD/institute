@@ -4,6 +4,7 @@ import com.codecmd.institute.security.jwt.JWTFilter;
 import com.codecmd.institute.security.jwt.TokenProvider;
 import com.codecmd.institute.web.rest.request.LoginRequest;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -24,16 +25,12 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/api")
-public class UserJWTController {
+@RequiredArgsConstructor
+public class AuthResource {
 
     private final TokenProvider tokenProvider;
 
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
-
-    public UserJWTController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder) {
-        this.tokenProvider = tokenProvider;
-        this.authenticationManagerBuilder = authenticationManagerBuilder;
-    }
 
     @PostMapping("/authenticate")
     public ResponseEntity<JWTToken> authorize(@Valid @RequestBody LoginRequest request) {

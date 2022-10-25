@@ -1,0 +1,51 @@
+id;name;description;difficulty_level;instructor
+3D2BA717-DCB9-5132-6EA6-D88B5167C3CC;DATABASE;ligula. Nullam feugiat placerat velit. Quisque varius. Nam porttitor scelerisque;ADVANCED;Veronica Madden
+73329775-7AD2-87DD-CBD1-B7E63C3BEEF7;JAVA;lobortis risus. In mi pede, nonummy ut, molestie in, tempus;BEGINNER;Cara Sykes
+F8582115-CAC6-C682-1596-0A3DA5ABBCE1;KOTLIN;rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at,;INTERMEDIATE;Buffy Charles
+67D21962-5D5B-5746-4FDA-7381C6882991;IOS;velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas.;ADVANCED;Blossom Bruce
+78366D59-2EBD-1445-4DC3-1C99AD1DBAB5;ANGULAR;Sed auctor odio a purus. Duis elementum, dui quis accumsan;BEGINNER;Ivan Juarez
+4130D199-C2FE-C404-5548-AAED21393A5E;SQL SERVER;eget magna. Suspendisse tristique neque venenatis lacus. Etiam bibendum fermentum;BEGINNER;Holly Byrd
+82116737-C3A0-690B-97D0-BE52A2419D2D;MONGO DB;fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin;BEGINNER;Jack Hoover
+B6686767-163B-A5C7-B3D7-4096B9165E32;NODE JS;tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque;INTERMEDIATE;Daryl Foreman
+750A6EC9-D2C4-D4B9-DCC7-4218E90A2EC6;ANGULAR II;lacus vestibulum lorem, sit amet ultricies sem magna nec quam.;INTERMEDIATE;Lionel Duffy
+A9B37620-8ED2-2D28-7232-AFB7DDC55B3E;ANGULAR III;placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante,;INTERMEDIATE;Brennan Ayala
+6FB3594A-C849-A176-5137-8E6165A97B77;NODE JS II;Cras sed leo. Cras vehicula aliquet libero. Integer in magna.;ADVANCED;Maxwell Owens
+C446AA43-5A8B-990C-FC97-A3D3D519EA8A;LINUX;Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus;INTERMEDIATE;Lester Reeves
+80BDEA96-2995-9B51-A8B8-FD3C67E32191;IOS II;posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse;ADVANCED;Maggy Holder
+3E7432AE-8E7C-9B1D-707E-4EF28AE1E267;UX/UI;Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc;ADVANCED;Aladdin Hensley
+D2C9A3D4-34E1-927B-8644-84468294913A;DATABASE II;tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi;BEGINNER;Stone Stark
+77CB1933-ABB5-318D-3481-4488AF469518;ANDROID;dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit;ADVANCED;Elizabeth Madden
+51867865-C408-CD7A-020F-88871904E6EA;LINUX II;Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat.;ADVANCED;Desirae Wyatt
+7E8422AD-9A11-D494-09D6-2CD23E8393C1;POSTGRES;dolor dolor, tempus non, lacinia at, iaculis quis, pede. Praesent;INTERMEDIATE;Dale Burgess
+4BEBD159-0375-7D09-BEC5-61D25C8C84BD;SQL SERVER II;Nullam ut nisi a odio semper cursus. Integer mollis. Integer;INTERMEDIATE;Barclay Fitzpatrick
+953C68AB-7DE2-E4E6-6825-AFDE87268695;ANDROID II;diam vel arcu. Curabitur ut odio vel est tempor bibendum.;ADVANCED;Clare Cameron
+930F5E93-E624-5AF6-35BE-68223F5189EE;ANGULAR IV;tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum;INTERMEDIATE;Alika Reilly
+AA1ECF18-E8D3-ED76-2AF7-97FE34AE3269;POSTGRES II;ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices,;INTERMEDIATE;Madeline Acevedo
+0F007E92-7D16-AA31-3DCF-25C274742637;SQL;luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc;BEGINNER;Leo Leach
+FE829A38-F771-167C-6F96-2A2963586351;RUBY;sodales purus, in molestie tortor nibh sit amet orci. Ut;ADVANCED;Buckminster Gay
+8580C3E3-93A3-5374-5959-71A50C5A040F;WINDOWS;sit amet, risus. Donec nibh enim, gravida sit amet, dapibus;ADVANCED;Alvin Mccray
+608C57B0-0858-C15C-AA3C-03CA9CCBAA57;DATABASE III;nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo;ADVANCED;Keelie Ford
+A5436D13-1E9F-6CED-57EB-5595E8B74EDA;C++;odio vel est tempor bibendum. Donec felis orci, adipiscing non,;ADVANCED;Rafael Meyers
+33AE54D3-9C8E-845D-A6B8-3B5EACF2E37E;GO;mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus;BEGINNER;Gisela Nieves
+F72B8AEE-8D12-8A8F-3D48-C6AFAB5834DC;RUBY II;sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis;ADVANCED;Garth Pruitt
+08629971-0CB6-3B1D-1527-E50316DE6827;WINDOWS II;nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas;ADVANCED;Maggy Manning
+405A7AB1-3B17-1295-60E4-A25C912FB40F;WINDOWS III;sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis;BEGINNER;Yael Norris
+7855E3B2-DA38-CF70-8ABF-570434D898A5;VUE;Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit;ADVANCED;Cally Morgan
+4BECC350-E2E9-ABAA-EDDE-873BC7F1EDA8;VUE;nisi dictum augue malesuada malesuada. Integer id magna et ipsum;BEGINNER;Jordan Christensen
+8FAB0184-E846-3C65-0453-CC1161504E72;WINDOWS IV;neque. Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis.;ADVANCED;Rebekah Frank
+4351C1CA-A240-4325-D6EC-2E2A114A7315;WINDOWS V;Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit,;ADVANCED;Bruce Townsend
+347189E9-6C92-1EAA-2BB8-EB5D0D3E1B7D;NODE JS III;Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna;ADVANCED;Ora Moody
+4C83AEA8-416A-E1EF-B387-1733BAA3D73D;KOTLIN II;bibendum ullamcorper. Duis cursus, diam at pretium aliquet, metus urna;ADVANCED;Yetta Mclean
+26448C02-2AE8-5787-C595-CB53D55B4DEB;GO II;ipsum leo elementum sem, vitae aliquam eros turpis non enim.;ADVANCED;Adam Stone
+39778D08-3C94-5A6C-9598-A959DE47231C;KOTLIN III;Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non;ADVANCED;Dolan White
+DEA72CA1-8C71-98AF-E702-6FBA3161BD3C;GO III;mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,;BEGINNER;Teegan Wilkins
+0E7424B1-D387-E298-E219-ED2642B8EC54;C++ II;consequat, lectus sit amet luctus vulputate, nisi sem semper erat,;BEGINNER;Maris Sanford
+041D1A15-5C66-2583-AE7D-48387F5BF866;WINDOWS VI;Donec tempor, est ac mattis semper, dui lectus rutrum urna,;ADVANCED;Isabelle Hunter
+7D5AB779-946C-6E1D-0091-77A568E1B8C1;UX/UI II;fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque;ADVANCED;Kelly Colon
+26225788-22A1-B23E-B907-A384E9FD9BD1;WINDOWS VII;eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis,;INTERMEDIATE;Ralph Bolton
+99A6963A-1118-D5C8-6A1C-8FD8E7BA9144;RUBY III;consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem,;INTERMEDIATE;Dominique Whitehead
+E3743C25-B689-37EA-8178-18191B780658;JAVA II;quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu;ADVANCED;Nicholas Ortega
+F78DA452-12D1-91A2-8A2C-FCC7BDCECC35;SQL SERVER III;Mauris nulla. Integer urna. Vivamus molestie dapibus ligula. Aliquam erat;ADVANCED;Breanna Pennington
+AD1E4782-965C-A696-FBED-97091A11B592;NODE JS IV;et magnis dis parturient montes, nascetur ridiculus mus. Proin vel;BEGINNER;Martena Robbins
+AE1F5A22-AE26-9129-C6BE-F6F17E5E8B09;DATABASE IV;ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit;BEGINNER;Alika Drake
+3D8C9329-A996-2270-506D-22C92D8DB775;MONGO DB II;nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in;BEGINNER;Channing Ray
