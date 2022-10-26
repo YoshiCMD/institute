@@ -1,6 +1,8 @@
 package com.codecmd.institute.config;
 
-import com.codecmd.institute.security.jwt.*;
+import com.codecmd.institute.config.security.jwt.JWTConfigurer;
+import com.codecmd.institute.config.security.jwt.TokenProvider;
+import com.codecmd.institute.shared.Constants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;

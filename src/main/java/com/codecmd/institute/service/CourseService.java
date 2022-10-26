@@ -18,9 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static com.codecmd.institute.config.Constants.searchFormat;
+import static com.codecmd.institute.shared.Constants.searchFormat;
 
 /**
  * Service Implementation for managing {@link Course}.

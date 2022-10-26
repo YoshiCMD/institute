@@ -1,5 +1,6 @@
 package com.codecmd.institute.config;
 
+import com.codecmd.institute.shared.util.SpringLiquibaseUtil;
 import liquibase.integration.spring.SpringLiquibase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

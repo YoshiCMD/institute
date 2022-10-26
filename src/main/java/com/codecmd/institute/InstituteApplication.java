@@ -1,7 +1,7 @@
 package com.codecmd.institute;
 
 import com.codecmd.institute.config.ApplicationProperties;
-import com.codecmd.institute.config.DefaultProfileUtil;
+import com.codecmd.institute.shared.util.DefaultProfileUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

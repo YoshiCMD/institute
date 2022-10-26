@@ -1,6 +1,6 @@
 package com.codecmd.institute;
 
-import com.codecmd.institute.config.DefaultProfileUtil;
+import com.codecmd.institute.shared.util.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

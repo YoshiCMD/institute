@@ -13,7 +13,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -64,5 +66,5 @@ public class Student extends AbstractAuditingEntity implements Serializable {
     @JoinTable(name = "student_course",
             joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
-    private Set<Course> courses = new HashSet<>();
+    private List<Course> courses = new ArrayList<>();
 }

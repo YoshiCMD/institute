@@ -1,5 +1,6 @@
 package com.codecmd.institute.config;
 
+import com.codecmd.institute.shared.ApplicationDefault;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

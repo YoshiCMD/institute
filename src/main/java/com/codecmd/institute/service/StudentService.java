@@ -3,13 +3,13 @@ package com.codecmd.institute.service;
 import com.codecmd.institute.domain.Student;
 import com.codecmd.institute.repository.CourseRepository;
 import com.codecmd.institute.repository.StudentRepository;
-import com.codecmd.institute.security.SecurityUtils;
+import com.codecmd.institute.config.security.SecurityUtils;
 import com.codecmd.institute.service.dto.CourseDTO;
 import com.codecmd.institute.service.dto.StudentDTO;
 import com.codecmd.institute.service.mapper.CourseMapper;
 import com.codecmd.institute.service.mapper.StudentMapper;
-import com.codecmd.institute.web.rest.error.StudentNotFoundException;
-import com.codecmd.institute.web.rest.request.StudentRequest;
+import com.codecmd.institute.shared.exception.StudentNotFoundException;
+import com.codecmd.institute.rest.controller.request.StudentRequest;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing {@link Student}.
@@ -89,19 +87,19 @@ public class StudentService {
     }
 
     /**
-     * register.
+     * enroll in courses.
      *
-     * @param courses list courses.
-     * @return the persisted entity.
+     * @param courses list of course id.
+     * @return list of enrolled courses.
      */
-    public Set<CourseDTO> enrollCourses(List<String> courses) {
+    public List<CourseDTO> enrollCourses(List<String> courses) {
         return SecurityUtils
                 .getCurrentUserLogin()
                 .map(studentRepository::findOneByLoginIgnoreCase)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .map(student -> {
-                    student.setCourses(new HashSet<>(courseRepository.findAllById(courses)));
+                    student.setCourses(courseRepository.findAllById(courses));
                     return studentRepository.save(student);
                 })
                 .map(Student::getCourses)
@@ -123,17 +121,27 @@ public class StudentService {
     }
 
     /**
-     * Get my courses current student.
+     * Get get the current student's enrolled courses..
      *
-     * @return the CourseDTO entity.
+     * @return detailed list of enrolled courses.
      */
     @Transactional(readOnly = true)
-    public Set<CourseDTO> myCourses() {
+    public List<CourseDTO> myCourses() {
         return SecurityUtils
                 .getCurrentUserLogin()
                 .flatMap(studentRepository::findOneByLoginIgnoreCase)
                 .map(Student::getCourses)
                 .map(courseMapper::toDto)
                 .orElseThrow(StudentNotFoundException::new);
+    }
+
+    /**
+     * Get students enrolled in the course.
+     *
+     * @return detailed list of students.
+     */
+    @Transactional(readOnly = true)
+    public List<StudentDTO> studentsByCourse(String courseId) {
+        return studentRepository.findAllByCoursesIn(courseRepository.findAllById(Arrays.asList(courseId))).stream().map(studentMapper::toDto).collect(Collectors.toList());
     }
 }
