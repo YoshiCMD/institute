@@ -9,9 +9,16 @@ plugins {
 group = 'com.codecmd'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+targetCompatibility=11
+assert System.properties["java.specification.version"] == "11" || "12" || "13" || "14" || "15" || "16" || "17" || "18"
 
 apply from: "gradle/profile_dev.gradle"
 
+defaultTasks "bootRun"
+
+springBoot {
+	mainClass = "com.codecmd.institute.InstituteApplication"
+}
 configurations {
 	providedRuntime
 	implementation.exclude module: "spring-boot-starter-tomcat"
@@ -79,3 +86,14 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+task cleanResources(type: Delete) {
+	delete "build/resources"
+}
+
+wrapper {
+	gradleVersion = "7.5.1"
+}
+
+
+compileJava.dependsOn processResources
+processResources.dependsOn bootBuildInfo
